@@ -13,13 +13,17 @@ class MyScreenView(MDScreen):
 
     def set_x(self, valor):
         self.controller.set_x(valor)
-        self.ids.resultado.text = str(valor)
+        self.ids.resultado.text = str(self.controller.get_x())
 
     def set_y(self, valor):
         self.controller.set_y(valor)
 
     def set_resultado(self, valor):
         self.controller.set_resultado(valor)
+
+    def zerar(self):
+        self.controller.zerar()
+        self.ids.resultado.text = str(0)
 
 
 Builder.load_file(os.path.join(os.path.dirname(__file__), "myscreen.kv"))

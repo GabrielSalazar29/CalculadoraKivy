@@ -1,8 +1,8 @@
 class MyScreenModel:
     def __init__(self):
-        self._x = 0
-        self._y = 0
-        self._resultado = 0
+        self._x = ""
+        self._y = ""
+        self._resultado = ""
 
     @property
     def x(self):
@@ -18,7 +18,10 @@ class MyScreenModel:
 
     @x.setter
     def x(self, valor):
-        self._x = valor
+        if self._x == "":
+            self._x = valor
+        else:
+            self._x = str(self._x) + str(valor)
         self.resultado = self._x
 
     @y.setter
@@ -29,3 +32,7 @@ class MyScreenModel:
     def resultado(self, valor):
         self._resultado = valor
 
+    def zerar(self):
+        self._x = ""
+        self._y = ""
+        self._resultado = ""

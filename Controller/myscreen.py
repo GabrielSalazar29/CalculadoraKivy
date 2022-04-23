@@ -12,6 +12,9 @@ class MyScreenController:
     def set_x(self, valor):
         self.model.x = valor
 
+    def get_x(self):
+        return self.model.x
+
     def set_y(self, valor):
 
         self.model.y = valor
@@ -19,3 +22,7 @@ class MyScreenController:
     def set_resultado(self, valor):
 
         self.model.resultado = valor
+
+    def zerar(self):
+
+        self.model.zerar()
