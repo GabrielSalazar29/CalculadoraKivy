@@ -13,7 +13,7 @@ class MyScreenView(MDScreen):
 
     def set_x(self, valor):
         self.controller.set_x(valor)
-        self.ids.resultado.text = str(self.controller.get_x())
+        self.ids.resultado.text = f"[b]{self.controller.get_x()}[/b]"
 
     def set_y(self, valor):
         self.controller.set_y(valor)
@@ -21,16 +21,16 @@ class MyScreenView(MDScreen):
     def set_operador(self, valor):
         self.controller.set_operador(valor)
         self.ids.contaparc.text = f"{self.controller.get_x()} {self.controller.get_operador()}"
-        self.ids.resultado.text = str(0)
+        self.ids.resultado.text = "[b]0[/b]"
 
     def set_resultado(self):
         self.controller.set_resultado()
         self.ids.contaparc.text = ""
-        self.ids.resultado.text = f"{self.controller.get_resultado()}"
+        self.ids.resultado.text = f"[b]{self.controller.get_resultado()}[/b]"
 
     def zerar(self):
         self.controller.zerar()
-        self.ids.resultado.text = str(0)
+        self.ids.resultado.text = "[b]0[/b]"
         self.ids.contaparc.text = ""
 
 
