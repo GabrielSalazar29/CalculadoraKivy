@@ -13,15 +13,28 @@ class MyScreenController:
         self.model.x = valor
 
     def get_x(self):
-        return self.model.x
+        if self.model.y == "":
+            return self.model.x
+        return self.model.y
 
     def set_y(self, valor):
 
         self.model.y = valor
 
-    def set_resultado(self, valor):
+    def set_operador(self, valor):
 
-        self.model.resultado = valor
+        self.model.operador = valor
+
+    def get_operador(self):
+        return self.model.operador
+
+    def set_resultado(self):
+
+        self.model.resultado()
+
+    def get_resultado(self):
+
+        return self.model._resultado
 
     def zerar(self):
 

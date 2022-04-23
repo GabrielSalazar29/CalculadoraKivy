@@ -2,6 +2,7 @@ class MyScreenModel:
     def __init__(self):
         self._x = ""
         self._y = ""
+        self._operador = ""
         self._resultado = ""
 
     @property
@@ -13,26 +14,37 @@ class MyScreenModel:
         return self._y
 
     @property
-    def resultado(self):
-        return self._resultado
+    def operador(self):
+        return self._operador
 
     @x.setter
     def x(self, valor):
-        if self._x == "":
-            self._x = valor
+
+        if self._operador == "":
+            if self._x == "":
+                self._x = valor
+            else:
+                self._x = str(self._x) + str(valor)
         else:
-            self._x = str(self._x) + str(valor)
-        self.resultado = self._x
+            if self._y == "":
+                self._y = valor
+            else:
+                self._y = str(self._y) + str(valor)
 
-    @y.setter
-    def y(self, valor):
-        self._y = valor
+    @operador.setter
+    def operador(self, valor):
+        self._operador = valor
 
-    @resultado.setter
-    def resultado(self, valor):
-        self._resultado = valor
+    def resultado(self):
+        if self._operador == "+":
+            self._resultado = int(self._x) + int(self._y)
+            self._x = self._resultado
+            self._y = ""
+
+        return self.resultado
 
     def zerar(self):
         self._x = ""
         self._y = ""
+        self._operador = ""
         self._resultado = ""
