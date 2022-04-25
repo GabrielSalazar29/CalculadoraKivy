@@ -36,20 +36,31 @@ class MyScreenModel:
         self._operador = valor
 
     def resultado(self):
+
+        if "." in str(self._x):
+            float(self._x)
+        else:
+            int(self._x)
+
+        if "." in str(self._y):
+            float(self._y)
+        else:
+            int(self._y)
+
         if self._operador == "+":
-            self._resultado = float(self._x) + float(self._y)
+            self._resultado = self._x + self._y
             self._x = self._resultado
             self._y = ""
         elif self._operador == "-":
-            self._resultado = float(self._x) - float(self._y)
+            self._resultado = self._x - self._y
             self._x = self._resultado
             self._y = ""
         elif self._operador == "x":
-            self._resultado = float(self._x) * float(self._y)
+            self._resultado = self._x * self._y
             self._x = self._resultado
             self._y = ""
         elif self._operador == "/":
-            self._resultado = float(self._x) / float(self._y)
+            self._resultado = self._x / self._y
             self._x = self._resultado
             self._y = ""
 
