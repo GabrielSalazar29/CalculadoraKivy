@@ -1,5 +1,6 @@
 from View.myscreen import MyScreenView
 
+
 class MyScreenController:
 
     def __init__(self, model):

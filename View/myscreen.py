@@ -8,9 +8,6 @@ class MyScreenView(MDScreen):
     controller = ObjectProperty()
     model = ObjectProperty()
 
-    def __init__(self, **kw):
-        super().__init__(**kw)
-
     def set_x(self, valor):
         self.controller.set_x(valor)
         self.ids.resultado.text = f"[b]{self.controller.get_x()}[/b]"
