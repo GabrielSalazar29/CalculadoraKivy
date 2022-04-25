@@ -30,5 +30,14 @@ class MyScreenView(MDScreen):
         self.ids.resultado.text = "[b]0[/b]"
         self.ids.contaparc.text = ""
 
+    def apagar(self):
+        self.controller.apagar()
+        if self.controller.get_x() == "":
+            self.ids.resultado.text = f"[b]0[/b]"
+        elif self.controller.get_y() == "" and self.controller.get_operador() != "":
+            self.ids.resultado.text = f"[b]0[/b]"
+        else:
+            self.ids.resultado.text = f"[b]{self.controller.get_x()}[/b]"
+
 
 Builder.load_file(os.path.join(os.path.dirname(__file__), "myscreen.kv"))

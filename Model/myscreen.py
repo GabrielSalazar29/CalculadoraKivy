@@ -48,6 +48,8 @@ class MyScreenModel:
     def resultado(self):
 
         self._x = str(self._x)
+        if self._y == "":
+            self._y = "0"
         self._y = str(self._y)
 
         if len(self._x) >= 2:
@@ -87,10 +89,20 @@ class MyScreenModel:
             self._x = self._resultado
             self._y = ""
 
-        return self.resultado
+        self._operador = ""
 
     def zerar(self):
         self._x = ""
         self._y = ""
         self._operador = ""
         self._resultado = ""
+
+    def apagar(self):
+        self._x = str(self._x)
+        self._y = str(self._y)
+
+        if self._operador == "":
+            self._x = self._x[:-1]
+        else:
+            self._y = self._y[:-1]
+
