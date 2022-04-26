@@ -39,5 +39,8 @@ class MyScreenView(MDScreen):
         else:
             self.ids.resultado.text = f"[b]{self.controller.get_x()}[/b]"
 
+        if "=" in self.ids.contaparc.text:
+            self.ids.contaparc.text = ""
+
 
 Builder.load_file(os.path.join(os.path.dirname(__file__), "myscreen.kv"))
