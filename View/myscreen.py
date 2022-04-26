@@ -22,7 +22,7 @@ class MyScreenView(MDScreen):
 
     def set_resultado(self):
         self.controller.set_resultado()
-        self.ids.contaparc.text = ""
+        self.ids.contaparc.text = self.controller.get_conta()
         self.ids.resultado.text = f"[b]{self.controller.get_resultado()}[/b]"
 
     def zerar(self):

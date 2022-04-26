@@ -14,7 +14,7 @@ class MyScreenController:
         self.model.x = valor
 
     def get_x(self):
-        if self.model.y == "":
+        if self.model.y == "0":
             return self.model.x
         return self.model.y
 
@@ -39,6 +39,9 @@ class MyScreenController:
     def get_resultado(self):
 
         return self.model.x
+
+    def get_conta(self):
+        return self.model.conta
 
     def zerar(self):
 
