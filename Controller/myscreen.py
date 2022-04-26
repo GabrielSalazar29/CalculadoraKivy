@@ -43,6 +43,9 @@ class MyScreenController:
     def get_conta(self):
         return self.model.conta
 
+    def potencia(self):
+        self.model.potencia()
+
     def zerar(self):
 
         self.model.zerar()

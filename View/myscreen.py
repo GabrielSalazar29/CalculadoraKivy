@@ -25,6 +25,11 @@ class MyScreenView(MDScreen):
         self.ids.contaparc.text = self.controller.get_conta()
         self.ids.resultado.text = f"[b]{self.controller.get_resultado()}[/b]"
 
+    def potencia(self):
+        self.ids.contaparc.text = f"{self.controller.get_x()}² = "
+        self.controller.potencia()
+        self.ids.resultado.text = f"[b]{self.controller.get_x()}[/b]"
+
     def zerar(self):
         self.controller.zerar()
         self.ids.resultado.text = "[b]0[/b]"

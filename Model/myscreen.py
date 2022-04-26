@@ -84,7 +84,7 @@ class MyScreenModel:
             self._conta = f"{self._x} {self._operador} {self._y} ="
             self._x = self._resultado
             self._y = "0"
-        elif self._operador == "/":
+        elif self._operador == "÷":
             self._resultado = self._x / self._y
             self._conta = f"{self._x} {self._operador} {self._y} ="
             self._x = self._resultado
@@ -96,6 +96,14 @@ class MyScreenModel:
                 self._x = int(self._x[:-2])
 
         self._operador = ""
+
+    def potencia(self):
+        self._x = float(self._x) ** 2
+
+        self._x = str(self._x)
+        if len(self._x) >= 2:
+            if self._x[-1] == "0" and self._x[-2] == ".":
+                self._x = int(self._x[:-2])
 
     def zerar(self):
         self._x = "0"
