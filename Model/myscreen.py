@@ -1,3 +1,5 @@
+import numpy as np
+
 class MyScreenModel:
     def __init__(self):
         self._x = "0"
@@ -98,7 +100,7 @@ class MyScreenModel:
         self._operador = ""
 
     def potencia(self):
-        self._x = float(self._x) ** 2
+        self._x = np.power(float(self._x), 2)
 
         self._x = str(self._x)
         if len(self._x) >= 2:
