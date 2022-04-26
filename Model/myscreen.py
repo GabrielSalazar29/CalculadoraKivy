@@ -48,6 +48,8 @@ class MyScreenModel:
 
     @operador.setter
     def operador(self, valor):
+        if self._operador != "":
+            self.resultado()
         self._operador = valor
 
     def resultado(self):
